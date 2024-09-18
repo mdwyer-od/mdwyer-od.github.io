@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
-    <title>Chrome Worker failure example</title>
+    <script src="https://vjs.zencdn.net/8.16.1/video.js"></script>
+    <title>Web worker failure example</title>
 </head>
 <body>
-    This page demonstrates a web worker crashing Chrome and Edge when it's in an iframe.
+    This page demonstrates a web worker crashing page when it's in an iframe.
     <br />
-    <video id="vid1" class="video-js">
-        <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-      </video>
+    <video id="vid1" class="video-js"></video>
 
     <script>
         const player = videojs('vid1', {
             autoplay: true,
             controls: true
+        });
+        
+        player.src({
+            src: 'http://vjs.zencdn.net/v/oceans.mp4',
+            type: 'application/x-mpegURL'
         });
     </script>
 </body>

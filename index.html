@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Worker failure example</title>
+</head>
+<body>
+    This page demonstrates a web worker crashing Chrome and Edge when it's in an iframe.
+    <script>
+        const blob = new Blob([`console.log('hello world')`], { type: 'application/javascript' });
+        const url = URL.createObjectURL(blob);
+        const w = new Worker(url);
+        console.log(w);
+    </script>
+</body>
+</html>
